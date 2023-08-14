@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reservation_new/navbar.dart';
 
@@ -8,14 +9,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   
-   MyApp({super.key});
+   const MyApp({super.key});
   
   
 
   @override
   Widget build(BuildContext context) {
-    double scalewidth = MediaQuery.of(context).size.width / 400;
-    double scaleheight = MediaQuery.of(context).size.height / 800;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(  

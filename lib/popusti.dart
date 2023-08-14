@@ -20,8 +20,8 @@ class _PopustiState extends State<Popusti> {
       children: [
         Container(
           margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
-          height: 120,
-          width: 120,
+          height: 130,
+          width: 130,
           decoration: BoxDecoration(
             color: Colors.grey[300],
             borderRadius: BorderRadius.circular(10),
@@ -37,10 +37,10 @@ class _PopustiState extends State<Popusti> {
             
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.pink[200],
+              color: Color.fromARGB(255, 11, 49, 175),
               border: Border.all(
                 width: 17,
-                color: const Color.fromARGB(255, 244, 143, 177),
+                color: Color.fromARGB(255, 11, 49, 175)
               ),
             ),
             child: Row(
@@ -49,7 +49,7 @@ class _PopustiState extends State<Popusti> {
                   child: Text('${widget.shop.ID}%',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    color: Colors.white
                   ),),
                   
                 ),

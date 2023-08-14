@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reservation_new/models/shop_model.dart';
 import 'package:reservation_new/my_widget.dart';
 import 'package:reservation_new/popusti.dart';
+import 'package:reservation_new/usluge_screen.dart';
 
 class HomePage extends StatelessWidget {
    HomePage
@@ -9,8 +10,8 @@ class HomePage extends StatelessWidget {
   List<Shop> favoriti=[Shop(naziv: 'Autoklub', ID: 6, logo: Image.asset('assets/aloe.png')),
                 Shop(naziv: 'Fiziocentar', ID: 3, logo: Image.asset('assets/FivestarSaltyBar3.png')),
                 Shop(naziv: 'Kupalište', ID: 4, logo: Image.asset('assets/SIXTHBIT-3.png')),];
-  List<Shop> svi=[Shop(naziv: 'Frizerski salon', ID: 1, logo: Image.asset('assets/flame.png')),
-                Shop(naziv: 'Teniski teren', ID: 2, logo: Image.asset('assets/buterfly.png')),
+  List<Shop> svi=[Shop(naziv: 'Frizerski salon i salon za uljepšavanje', ID: 1, logo: Image.asset('assets/flame.png')),
+                Shop(naziv: 'Teniski teren', ID: 2, logo: Image.asset('assets/radius.jpg')),
                 Shop(naziv: 'Autoklub', ID: 6, logo: Image.asset('assets/coffe.png')),
                 Shop(naziv: 'Fiziocentar', ID: 3, logo: Image.asset('assets/halal.png',)),
                 Shop(naziv: 'Kupalište', ID: 4, logo: Image.asset('assets/mountain.png')),
@@ -72,17 +73,27 @@ class HomePage extends StatelessWidget {
               ),),
             ),
             
-            SizedBox(
-              height: scaleheight*130,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                itemCount: svi.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return MyWidget(shop: svi[index]);
-                },
-                
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ShopDetailsScreen(
+                          
+                        ),),);
+              },
+              child: SizedBox(
+                height: scaleheight*130,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: svi.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return MyWidget(shop: svi[index]);
+                  },
+                  
+                ),
               ),
             ),
             SizedBox(
